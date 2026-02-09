@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 // ⭐ CORS: Credentials ko true rakhna lazmi hai cookies ke liye
 app.use(cors({
-    origin: 'http://localhost:3000', 
+    origin: 'https://beauty-parcel.vercel.app/', 
     credentials: true
 }));
 
@@ -62,7 +62,7 @@ const redirectIfLoggedIn = (req, res, next) => {
     if (token) {
         try {
             jwt.verify(token, JWT_SECRET);
-            return res.redirect('http://localhost:3000/?alreadyLoggedIn=true');
+            return res.redirect('https://beauty-parcel.vercel.app/?alreadyLoggedIn=true');
         } catch (err) {
             res.clearCookie("token");
             next();
@@ -100,7 +100,7 @@ app.post('/acc-login', async (req, res) => {
             sameSite: 'lax',
             maxAge: 24 * 60 * 60 * 1000 
         });
-        res.redirect('http://localhost:3000/');
+        res.redirect('https://beauty-parcel.vercel.app/');
     } else {
         res.send("Username Or Password is Wrong!");
     }
@@ -134,13 +134,13 @@ app.post('/verify-otp', async (req, res) => {
         const token = jwt.sign({ email, userid: user._id }, JWT_SECRET);
         res.cookie("token", token, { httpOnly: true, secure: false, sameSite: 'lax', maxAge: 24 * 60 * 60 * 1000 });
         delete tempUsers[email];
-        res.redirect('http://localhost:3000/'); 
+        res.redirect('https://beauty-parcel.vercel.app/'); 
     } else { res.send("Wrong OTP!"); }
 });
 
 app.get('/logout', (req, res) => {
     res.clearCookie("token");
-    res.redirect('http://localhost:3000/');
+    res.redirect('https://beauty-parcel.vercel.app/');
 });
 app.get('/api/product/default', async (req, res) => {
     try {
