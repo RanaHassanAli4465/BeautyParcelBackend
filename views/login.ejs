@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login - Beauty Parcel</title>
+  <link rel="stylesheet" href="/stylesheet/login.css">
+</head>
+<body>
+<div class="login-container">
+  
+  <div class="logo-section">
+    <img src="/images/Logo.png" alt="Beauty Parcel Logo" class="main-logo">
+  </div>
+
+  <div class="form-section">
+    <div class="login-box">
+      <h1>Customer Login</h1>
+      <hr class="divider">
+
+      <form class="login-form" action="/acc-login" method="post">
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Enter Your Email" required>
+        </div>
+
+        <div class="input-group">
+          <div class="password-row">
+            <label>Password</label>
+            <a href="#" class="forgot">Forgot your password?</a>
+          </div>
+          <input type="password" name="pass" placeholder="Enter Password" required>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Sign In</button>
+          <p>New Customer? <a href="/signup">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

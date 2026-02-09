@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP - Beauty Parcel</title>
+    <link rel="stylesheet" href="/stylesheet/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Confirm OTP</h1>
+            <p>We've sent a code to <b><%= email %></b></p>
+            <form action="/verify-otp" method="post">
+                <input type="hidden" name="email" value="<%= email %>">
+                <div class="input-group">
+                    <input type="text" name="otp" placeholder="Enter 6-digit OTP" required maxlength="6">
+                </div>
+                <button type="submit" style="margin-top: 15px;">Verify & Continue</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
