@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 // ⭐ CORS: Credentials ko true rakhna lazmi hai cookies ke liye
 app.use(cors({
-    origin: 'https://beauty-parcel.vercel.app/', 
+    origin: 'https://beauty-parcel.vercel.app', 
     credentials: true
 }));
 
