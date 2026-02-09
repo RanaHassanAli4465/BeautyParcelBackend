@@ -245,5 +245,8 @@ app.post('/api/contact', async (req, res) => {
         res.status(500).json({ success: false, message: "Server error" });
     }
 });
+app.get(`/`,(req,res)=>{
+    res.redirect(`https://beauty-parcel.vercel.app/`);
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Backend: http://localhost:${PORT}`));
